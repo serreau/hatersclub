@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">HATERS CLUB</string>
+    <string name="informations">Informations</string>
+    <string name="settings">Paramétres</string>
+    <string name="errorUsernameFormatText">
+        Doit contenir entre 8 et 20 caractères\nPeut contenir uniquement les lettres de A à Z, des chiffres, _ et .\n_ et . sont interdits au début et à fin\n_ et . sont interdits plusieurs fois d\'affilé
+    </string>
+</resources>

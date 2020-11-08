@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.main.MainFragment"
+    android:windowSoftInputMode="adjustResize">
+
+    <ImageView
+        android:id="@+id/emoji"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="80dp"
+        android:src="@drawable/enerve"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/tuto"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:src="@drawable/tuto"
+        android:layout_margin="20dp"
+        app:layout_constraintTop_toBottomOf="@id/numberPlateDrawable"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:clipToPadding = "false"
+        android:paddingTop="95dp"
+        android:paddingBottom="95dp"
+        android:background="@color/white_transparent"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/numberPlateDrawable"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/numberPlateDrawableHeight"
+        android:src="@drawable/pi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="10dp"
+        android:background="@color/transparent" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/numberPlate1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:hint="BT"
+        app:layout_constraintTop_toTopOf="@+id/numberPlateDrawable"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPlateDrawable"
+        app:layout_constraintStart_toStartOf="@id/numberPlateDrawable"
+        app:layout_constraintEnd_toStartOf="@id/numberPlate2"
+        android:gravity="start"
+        android:textSize="40sp"
+        android:inputType="textCapCharacters"
+        android:nextFocusRight="@id/numberPlate2"
+        android:maxLength="2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@id/numberPlate1"
+        app:layout_constraintEnd_toStartOf="@id/numberPlate2"
+        app:layout_constraintTop_toTopOf="@+id/numberPlateDrawable"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPlateDrawable"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/black"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/numberPlate2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="848"
+        app:layout_constraintTop_toTopOf="@+id/numberPlateDrawable"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPlateDrawable"
+        app:layout_constraintStart_toEndOf="@id/numberPlate1"
+        app:layout_constraintEnd_toStartOf="@id/numberPlate3"
+        android:gravity="start"
+        android:textSize="40sp"
+        android:inputType="number"
+        android:nextFocusRight="@id/numberPlate3"
+        android:nextFocusLeft="@id/numberPlate1"
+        android:maxLength="3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-"
+        app:layout_constraintStart_toEndOf="@id/numberPlate2"
+        app:layout_constraintEnd_toStartOf="@id/numberPlate3"
+        app:layout_constraintTop_toTopOf="@+id/numberPlateDrawable"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPlateDrawable"
+        android:textSize="40sp"
+        android:textStyle="bold"
+
+        android:textColor="@color/black"/>
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/numberPlate3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="50dp"
+        android:hint="YG"
+        app:layout_constraintTop_toTopOf="@+id/numberPlateDrawable"
+        app:layout_constraintBottom_toBottomOf="@+id/numberPlateDrawable"
+        app:layout_constraintStart_toEndOf="@id/numberPlate2"
+        app:layout_constraintEnd_toEndOf="@id/numberPlateDrawable"
+        android:gravity="start"
+        android:textSize="40sp"
+        android:inputType="textCapCharacters"
+        android:nextFocusLeft="@id/numberPlate2"
+        android:maxLength="2"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/commentButton"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="ENVOYER UN MESSAGE"
+        android:layout_margin="20dp"
+        android:enabled="false"/>
+
+    <ProgressBar
+        android:id="@+id/loadingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
